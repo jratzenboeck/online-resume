@@ -1,0 +1,23 @@
+{
+  "name": "online-resume",
+  "version": "1.0.0",
+  "description": "My interactive online resume",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ratzi199/online-resume.git"
+  },
+  "keywords": [
+    "resume",
+    "online"
+  ],
+  "author": "Jürgen Ratzenböck",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ratzi199/online-resume/issues"
+  },
+  "homepage": "https://github.com/ratzi199/online-resume#readme"
+}
