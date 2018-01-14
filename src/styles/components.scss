@@ -1,0 +1,41 @@
+@import 'tools';
+
+.section {
+  width: 100%;
+}
+
+.first-section {
+  background-color: aqua;
+  height: 100vh;
+  position: relative;
+}
+
+.container-center-total {
+  @include container-fixed-centered-horizontal(700px, 200px);
+  top: 50%;
+}
+
+.next-section {
+  @include container-fixed-centered-horizontal(300px, 80px);
+  bottom: 10px;
+}
+
+.subtitle {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.section__content {
+  width: 75%;
+  margin: 0 auto;
+}
+
+.about-me-list {
+  list-style: none;
+}
+
+.about-me-list__account-item {
+  display: inline;
+  font-size: 1.3em;
+  padding-right: 5px;
+}
