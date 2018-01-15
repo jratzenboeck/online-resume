@@ -1,8 +1,18 @@
 body {
   line-height: 1.8;
+  color: #fff;
 }
 
 h1 {
   font-family: Helvetica, sans-serif;
   font-size: 72px;
+}
+
+a {
+  color: #fff;
+  text-decoration: none;
+
+  :hover {
+    color: #fff;
+  }
 }
