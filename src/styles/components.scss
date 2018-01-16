@@ -1,56 +1,130 @@
 @import 'tools';
 
+// General section component
 .section {
   width: 100%;
+  padding: 50px 0;
+
+  .section__content {
+    width: 100%;
+    margin: 50px auto 0 auto;
+
+    @media (min-width: $small-device) {
+      width: 75%;
+    }
+
+    @media (min-width: $medium-device) {
+      width: 50%;
+    }
+  }
 }
 
-.first-section {
+// Container centered absolutely vertically and horizontally in viewport
+.container-center-total {
+  @include container-fixed-centered-horizontal(300px, 200px);
+  top: 50%;
+
+  @media (min-width: $small-device) {
+    @include container-fixed-centered-horizontal(500px, 100px);
+  }
+  @media (min-width: $medium-device) {
+    @include container-fixed-centered-horizontal(700px, 150px);
+  }
+}
+
+// Next section component (link text and arrow down)
+.next-section {
+  @include container-fixed-centered-horizontal(300px, 80px);
+  bottom: 10px;
+  height: auto;
+
+  .next-section__link-text {
+    line-height: 1.0;
+    font-size: 18px;
+  }
+}
+
+.resume-item {
+  margin-bottom: 50px;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+
+  .resume-item__column-xs {
+    margin-bottom: 20px;
+
+    @media (min-width: $small-device) {
+      margin-bottom: 0;
+    }
+  }
+  .resume-item__header {
+    font-size: 20px;
+  }
+}
+
+.focus-list {
+  margin-left: 20px;
+  list-style-type: square;
+}
+
+// First section with content
+.intro-section {
   background-color: #6ed3cf;
   height: 100vh;
   position: relative;
 }
 
-.second-section {
+#headline {
+  font-size: 36px;
+
+  @media (min-width: $small-device) {
+    font-size: 48px;
+  }
+  @media (min-width: $medium-device) {
+    font-size: 72px;
+  }
+}
+
+// Second section with content
+.about-me-section {
   background-color: #9068be;
 }
 
-.container-center-total {
-  @include container-fixed-centered-horizontal(700px, 200px);
-  top: 50%;
-}
-
-.next-section {
-  @include container-fixed-centered-horizontal(300px, 80px);
-  bottom: 10px;
-}
-
-.subtitle {
-  text-align: center;
-  padding: 30px 0;
-}
-
-.section__content {
-  width: 50%;
-  margin: 0 auto;
+.section-intro-text {
+  margin-bottom: 50px;
 }
 
 .about-me-list {
   list-style: none;
-}
+  line-height: 2.0;
+  text-align: center;
+  margin-top: 50px;
 
-.about-me-list__account-item {
-  display: inline;
-  font-size: 1.3em;
-  padding-right: 5px;
+  @media (min-width: $small-device) {
+    margin: 0;
+  }
+
+  .about-me-list__account-item {
+    display: inline;
+    font-size: 1.3em;
+    padding-right: 5px;
+  }
 }
 
 .profile-picture {
-  text-align: right;
+  border-radius: 50%;
+  width: 200px;
+  height: 200px;
+  border: 10px solid lightgrey
 }
 
-.profile-picture__image {
-  border-radius: 50%;
-  width: 180px;
-  height: 180px;
-  border: 10px solid lightgrey
+// Third section
+.education-section {
+  background-color: #89bdd3;
+}
+
+// Fourth section
+.carreer-section {
+  background-color: orange;
 }

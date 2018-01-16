@@ -1,18 +1,18 @@
+@import 'tools';
 body {
   line-height: 1.8;
   color: #fff;
+  font-size: 18px;
 }
 
 h1 {
   font-family: Helvetica, sans-serif;
-  font-size: 72px;
 }
 
 a {
-  color: #fff;
-  text-decoration: none;
+  @include basic-link;
 
-  :hover {
-    color: #fff;
+  &:hover {
+    @include basic-link;
   }
 }

@@ -3,9 +3,10 @@ var sass = require('gulp-sass');
 var clean = require('gulp-clean');
 var webserver = require('gulp-webserver');
 var concat = require('gulp-concat');
+var nunjucksRender = require('gulp-nunjucks-render');
 
 var vendorCss = [
-  'node_modules/bootstrap/dist/css/bootstrap.min.css',
+  'node_modules/bootstrap/dist/css/bootstrap.css',
   'node_modules/font-awesome/css/font-awesome.min.css'
 ];
 
@@ -14,8 +15,14 @@ var fonts = [
 ];
 
 gulp.task('html', function (){
-    return gulp.src('src/**/*.html')
-        .pipe(gulp.dest('dist'));
+    // Gets .html and .nunjucks files in pages
+    return gulp.src('src/pages/**/*.html')
+    // Renders template with nunjucks
+        .pipe(nunjucksRender({
+            path: ['src/templates']
+        }))
+        // output files in app folder
+        .pipe(gulp.dest('dist'))
 });
 
 gulp.task('js', function () {
@@ -58,9 +65,9 @@ gulp.task('webserver', function() {
 });
 
 
-gulp.task('build', gulp.series('clean', gulp.parallel('html', 'js', 'vendorCss', 'sass', 'fonts', 'img')));
+gulp.task('build', gulp.series(gulp.parallel('html', 'js', 'vendorCss', 'sass', 'fonts', 'img')));
 gulp.task('run', gulp.series('build', 'webserver'));
-gulp.watch('src/**/*', gulp.series('build'));
+gulp.watch('src/**/*.*', gulp.series('build'));
 
 gulp.task('default', gulp.series('build'));
 
