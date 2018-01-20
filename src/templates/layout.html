@@ -4,11 +4,16 @@
     <meta charset="UTF-8">
     <meta name="robots" content="noindex">
     <title>Online Resume - Jürgen Ratzenböck</title>
-    <link rel="stylesheet" href="styles/vendor.css"/>
+    <link rel="stylesheet" href="styles/vendor.min.css"/>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans" >
     <link rel="stylesheet" href="styles/style.css"/>
-    <script src="js/main.js"></script>
+    <script src="js/intro.js"></script>
+    <script src="js/vendor.min.js"></script>
+    <script src="js/util.js"></script>
 </head>
 
-{% block content %} {% endblock %}
+<body onload="onLoad()" data-spy="scroll" data-target=".navbar">
+    {% block content %} {% endblock %}
+</body>
 
 </html>

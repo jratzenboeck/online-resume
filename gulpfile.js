@@ -4,10 +4,17 @@ var clean = require('gulp-clean');
 var webserver = require('gulp-webserver');
 var concat = require('gulp-concat');
 var nunjucksRender = require('gulp-nunjucks-render');
+var uglify = require('gulp-uglify');
+var babel = require('gulp-babel');
 
 var vendorCss = [
   'node_modules/bootstrap/dist/css/bootstrap.css',
   'node_modules/font-awesome/css/font-awesome.min.css'
+];
+
+var vendorJS = [
+  'node_modules/jquery/dist/jquery.min.js',
+    'node_modules/bootstrap/dist/js/bootstrap.min.js'
 ];
 
 var fonts = [
@@ -27,13 +34,22 @@ gulp.task('html', function (){
 
 gulp.task('js', function () {
    return gulp.src('src/*/**.js')
+       // .pipe(babel({presets: ['env'], plugins: ["transform-async-to-generator"]}))
+       // .pipe(uglify())
+       // .pipe(concat('index.min.js'))
        .pipe(gulp.dest('dist'));
 });
 
 gulp.task('vendorCss', function () {
     return gulp.src(vendorCss)
-        .pipe(concat('vendor.css'))
+        .pipe(concat('vendor.min.css'))
         .pipe(gulp.dest('dist/styles'));
+});
+
+gulp.task('vendorJs', function() {
+    return gulp.src(vendorJS)
+        .pipe(concat('vendor.min.js'))
+        .pipe(gulp.dest('dist/js'));
 });
 
 gulp.task('fonts', function () {
@@ -65,7 +81,7 @@ gulp.task('webserver', function() {
 });
 
 
-gulp.task('build', gulp.series(gulp.parallel('html', 'js', 'vendorCss', 'sass', 'fonts', 'img')));
+gulp.task('build', gulp.series('clean', gulp.parallel('html', 'js', 'vendorCss', 'vendorJs', 'sass', 'fonts', 'img')));
 gulp.task('run', gulp.series('build', 'webserver'));
 gulp.watch('src/**/*.*', gulp.series('build'));
 

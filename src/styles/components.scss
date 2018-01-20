@@ -1,9 +1,16 @@
 @import 'tools';
 
+// Navbar
+.resume-navbar {
+  border-width: 0;
+}
+
 // General section component
 .section {
   width: 100%;
-  padding: 50px 0;
+  padding-top: 70px;
+  padding-bottom: 150px;
+  position: relative;
 
   .section__content {
     width: 100%;
@@ -16,6 +23,20 @@
     @media (min-width: $medium-device) {
       width: 50%;
     }
+  }
+
+  .section__subtitle {
+    margin: 30px 0;
+
+    &:first-child {
+      margin-top: 0;
+    }
+  }
+}
+
+@media (min-width: $small-device) {
+  .fullscreen-section-sm {
+    height: 100vh;
   }
 }
 
@@ -35,7 +56,7 @@
 // Next section component (link text and arrow down)
 .next-section {
   @include container-fixed-centered-horizontal(300px, 80px);
-  bottom: 10px;
+  bottom: 20px;
   height: auto;
 
   .next-section__link-text {
@@ -45,21 +66,34 @@
 }
 
 .resume-item {
-  margin-bottom: 50px;
+  margin-bottom: 0;
+
+  @media (min-width: $small-device) {
+    margin-bottom: 50px;
+  }
 
   &:last-child {
     margin-bottom: 0;
   }
 
-  .resume-item__column-xs {
+  .resume-item__header {
+    font-size: 20px;
+  }
+
+  .resume-item__icon {
+    padding-right: 5px;
+  }
+
+  .resume-item__column {
     margin-bottom: 20px;
 
     @media (min-width: $small-device) {
       margin-bottom: 0;
     }
   }
-  .resume-item__header {
-    font-size: 20px;
+
+  .resume-item__inner-row {
+    margin-top: 20px;
   }
 }
 
@@ -70,9 +104,8 @@
 
 // First section with content
 .intro-section {
-  background-color: #6ed3cf;
   height: 100vh;
-  position: relative;
+  background-color: #6ed3cf;
 }
 
 #headline {
@@ -89,6 +122,17 @@
 // Second section with content
 .about-me-section {
   background-color: #9068be;
+
+  @media (min-width: $small-device) {
+    padding-bottom: 0;
+    padding-top: 0;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-align-items: center;
+    align-items: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+  }
 }
 
 .section-intro-text {
@@ -121,10 +165,109 @@
 
 // Third section
 .education-section {
-  background-color: #89bdd3;
+  background-color: #22264b;
 }
 
 // Fourth section
 .carreer-section {
-  background-color: orange;
+  background-color: #667467;
+}
+
+// Fifth section
+.abilities-section {
+  background-color: #3fb0ac;
+}
+
+// Sixth section
+.projects-section {
+  background-color: #856046;
+}
+
+.project-figure {
+  background: #1d2120;
+  position: relative;
+
+  &:hover {
+    .project-figure__image {
+      opacity: 0.2;
+    }
+  }
+
+  &:hover {
+    .project-figure__caption-header {
+      opacity: 1.0;
+    }
+  }
+
+  .project-figure__image {
+    max-width: 100%;
+    height: auto;
+    -webkit-transition: opacity 0.5s;
+    transition: opacity 0.5s;
+  }
+
+  .project-figure__caption {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    padding: 10px 10px;
+  }
+
+  .project-figure__caption-header {
+    display: flex;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    -webkit-transition: opacity 0.5s;
+    transition: opacity 0.5s;
+  }
+}
+
+.success-list {
+  list-style-type: none;
+}
+
+// Seventh section
+.spare-time-section {
+  background-color: #e62739;
+}
+
+// Footer
+.resume-footer {
+  background-color: #5a5c51;
+  padding: 10px 0;
+
+  .resume-footer__container {
+    width: 100%;
+    margin: 0 auto;
+
+    @media (min-width: $small-device) {
+      width: 75%;
+    }
+
+    @media (min-width: $medium-device) {
+      width: 50%;
+    }
+  }
+}
+
+.resume-footer-accounts {
+  list-style-type: none;
+  text-align: right;
+
+  .resume-footer-accounts__item {
+    display: inline-block;
+    padding-right: 5px;
+  }
+}
+
+.account-item-link {
+  color: #fff;
+
+  &:hover {
+    color: #000;
+  }
 }

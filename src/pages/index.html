@@ -1,10 +1,15 @@
 {% extends "layout.html" %}
 
 {% block content %}
-<body onload="onLoad()">
-    {% include "partials/section-intro.html" %}
-    {% include "partials/section-about-me.html" %}
-    {% include "partials/section-education.html" %}
-</body>
+
+{% include "partials/navbar.html" %}
+{% include "partials/section-intro.html" %}
+{% include "partials/section-about-me.html" %}
+{% include "partials/section-education.html" %}
+{% include "partials/section-career.html" %}
+{% include "partials/section-abilities.html" %}
+{% include "partials/section-projects-success.html" %}
+{% include "partials/section-spare-time.html" %}
+{% include "partials/footer.html" %}
 
 {% endblock %}

@@ -1,32 +1,38 @@
-<div class="section about-me-section">
-    <h2 class="text-center">Über mich</h2>
-    <!-- Main content div -->
-    <div class="container-fluid section__content">
-        <div class="row section-intro-text text-center">
-            <div class="col-xs-12">
-                Ich bin ein junger, motivierter Software Engineer.
-                Am wohlsten fühle ich mich im Web Development.
-                Ich liebe es anspruchsvolle Web Applications zu entwickeln und zu optimieren.
-                Performance und großartige User Experience liegen mir besonders am Herzen.
+<div id="about-me" class="section fullscreen-section-sm about-me-section">
+    <div>
+        <h2 class="text-center">Über mich</h2>
+        <!-- Main content div -->
+        <div class="container-fluid section__content">
+            <div class="row section-intro-text text-center">
+                <div class="col-xs-12">
+                    Ich bin ein junger, motivierter Software Engineer.
+                    Am wohlsten fühle ich mich im Web Development.
+                    Ich liebe es anspruchsvolle Web Applications zu entwickeln und zu optimieren.
+                    Performance und großartige User Experience liegen mir besonders am Herzen.
+                </div>
             </div>
-        </div>
-        <div class="row">
-            <!-- Tablets, Desktop -->
-            <div class="hidden-xs col-sm-8">
-                {% include "partials/profile-details.html" %}
-            </div>
-            <div class="hidden-xs text-right col-sm-4">
-                <img class="profile-picture" src="../img/profile-picture.jpg" alt="Profilfoto von Jürgen"/>
-            </div>
+            <div class="row">
+                <!-- Tablets, Desktop -->
+                <div class="hidden-xs col-sm-8">
+                    {% include "partials/profile-details.html" %}
+                </div>
+                <div class="hidden-xs text-right col-sm-4">
+                    <img class="profile-picture" src="img/profile-picture.jpg" alt="Profilfoto von Jürgen"/>
+                </div>
 
-            <!-- Mobile -->
-            <div class="visible-xs text-center">
-                <img class="profile-picture" src="../img/profile-picture.jpg" alt="Profilfoto von Jürgen"/>
-            </div>
-            <div class="visible-xs">
-                {% include "partials/profile-details.html" %}
+                <!-- Mobile -->
+                <div class="visible-xs text-center">
+                    <img class="profile-picture" src="img/profile-picture.jpg" alt="Profilfoto von Jürgen"/>
+                </div>
+                <div class="visible-xs">
+                    {% include "partials/profile-details.html" %}
+                </div>
             </div>
         </div>
     </div>
 
+    <div class="next-section">
+        <p class="next-section__link-text">Ausbildung</p>
+        <a href="#education"><i class="fa fa-chevron-down fa-3x"></i></a>
+    </div>
 </div>
