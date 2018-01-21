@@ -1,0 +1,12 @@
+async function onLoad() {
+    let headline = 'Hi, ich bin Jürgen';
+    for (let ch of headline) {
+        document.getElementById('headline').innerHTML += ch;
+        await sleep(100);
+    }
+}
+
+function sleep(ms) {
+    return new Promise((resolve) => setTimeout(resolve, ms));
+}
+
