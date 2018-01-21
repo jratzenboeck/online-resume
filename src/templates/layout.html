@@ -3,9 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="robots" content="noindex">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Online Resume - Jürgen Ratzenböck</title>
-    <link rel="stylesheet" href="styles/vendor.min.css"/>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans" >
+
+    <link rel="icon" href="img/favicon.ico">
+    <link rel="icon" type="image/png" sizes="32x32" href="img/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="img/favicon-16x16.png">
+
+    <link rel="preload" href="styles/vendor.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'"/>
+    <noscript><link rel="stylesheet" href="style/vendor.min.css"></noscript>
+
+    <link rel="preload" href="https://fonts.googleapis.com/css?family=Open+Sans"
+          as="style" onload="this.onload=null;this.rel='stylesheet'"/>
+    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans"></noscript>
+    {% include "partials/load-css-async.html" %}
+
     <link rel="stylesheet" href="styles/style.css"/>
     <script src="js/intro.js"></script>
 </head>
