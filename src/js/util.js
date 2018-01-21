@@ -12,9 +12,16 @@ $(document).ready(function () {
         $('#arrow-intro-section').stop(false, false);
     });
 
-    moveNextSectionArrow();
+    animateNextSectionArrow();
+    lazyLoadImages();
+});
 
-    const images = document.querySelectorAll('.lazy-load');
+function lazyLoadImages() {
+    let images = getAllImagesToLazilyLoad();
+    createObserver(images);
+}
+
+function createObserver(images) {
     const config = {
         // If the image gets within 50px in the Y axis, start the download.
         rootMargin: '50px 0px',
@@ -31,23 +38,27 @@ $(document).ready(function () {
             observer.observe(image);
         });
     }
+}
 
-    function onIntersection(entries, observer) {
-        entries.forEach(entry => {
-            if (entry.intersectionRatio > 0) {
-                observer.unobserve(entry.target);
-                preLoad(entry.target);
-            }
-        });
-    }
+function onIntersection(entries, observer) {
+    entries.forEach(entry => {
+        if (entry.intersectionRatio > 0) {
+            observer.unobserve(entry.target);
+            preLoad(entry.target);
+        }
+    });
+}
 
-    function preLoad(image) {
-        image.src = image.dataset.src;
-        image.onload = () => {
-            image.removeAttribute('data-src');
-        };
-    }
-});
+function preLoad(image) {
+    image.src = image.dataset.src;
+    image.onload = () => {
+        image.removeAttribute('data-src');
+    };
+}
+
+function getAllImagesToLazilyLoad() {
+    return $.find('.lazy-load');
+}
 
 function scrollToSection(section) {
     $('html, body').animate({
@@ -55,13 +66,13 @@ function scrollToSection(section) {
     }, 1000);
 }
 
-function moveNextSectionArrow() {
+function animateNextSectionArrow() {
     let arrow = $('#arrow-intro-section');
 
     arrow.animate({
         top: '+6'
     }, 800).animate({
         top: '-3'
-    }, 800, moveNextSectionArrow);
+    }, 800, animateNextSectionArrow);
 }
 
