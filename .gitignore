@@ -60,7 +60,3 @@ typings/
 # IntelliJ files
 .idea
 *.iml
-
-# Destination folder
-dist/
-
