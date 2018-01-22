@@ -10,12 +10,13 @@
     <link rel="icon" type="image/png" sizes="32x32" href="img/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="img/favicon-16x16.png">
 
-    <link rel="preload" href="styles/vendor.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'"/>
-    <noscript><link rel="stylesheet" href="style/vendor.min.css"></noscript>
-
-    <link rel="preload" href="https://fonts.googleapis.com/css?family=Open+Sans"
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans">
+    <link rel="preload" href="styles/vendor.min.css"
           as="style" onload="this.onload=null;this.rel='stylesheet'"/>
-    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans"></noscript>
+
+    <noscript>
+        <link rel="stylesheet" href="style/vendor.min.css">
+    </noscript>
     <script>
     (function(w){
         "use strict";
@@ -98,10 +99,9 @@
 </script>
 
     <link rel="stylesheet" href="styles/style.css"/>
-    <script src="js/intro.js"></script>
 </head>
 
-<body onload="onLoad()" data-spy="scroll" data-target=".navbar">
+<body data-spy="scroll" data-target=".navbar">
     
 
 <nav class="navbar navbar-default navbar-fixed-top resume-navbar">
@@ -144,11 +144,29 @@
 </nav>
 <div class="section intro-section">
     <h1 id="headline" class="container-center-total"></h1>
+    <noscript><h1 class="container-center-total">Hi, ich bin Jürgen</h1></noscript>
     <div class="next-section">
         <p class="next-section__link-text">Über mich</p>
         <a href="#about-me"><i id="arrow-intro-section" style="position: relative; top: 0px" class="fa fa-chevron-down fa-3x"></i></a>
     </div>
 </div>
+
+<script>
+    async function onLoad() {
+        let headline = 'Hi, ich bin Jürgen';
+        for (let ch of headline) {
+            document.getElementById('headline').innerHTML += ch;
+            await sleep(100);
+        }
+    }
+
+    function sleep(ms) {
+        return new Promise((resolve) => setTimeout(resolve, ms));
+    }
+
+    onLoad().then(() => {});
+</script>
+
 <script src="js/vendor.min.js"></script>
 <script src="js/util.js"></script>
 
