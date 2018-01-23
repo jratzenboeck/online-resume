@@ -239,6 +239,14 @@ a {
   .account-item-link:hover {
     color: #000; }
 
+.blog-link {
+  color: #fff;
+  text-decoration: underline; }
+  .blog-link:hover {
+    color: #000; }
+  .blog-link:visited {
+    color: #fff; }
+
 @media (min-width: 768px) {
   .text-left-sm {
     text-align: left; }
