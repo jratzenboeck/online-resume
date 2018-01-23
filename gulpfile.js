@@ -34,9 +34,10 @@ gulp.task('html', function (){
 
 gulp.task('js', function () {
    return gulp.src('src/*/**.js')
-       // .pipe(babel({presets: ['env'], plugins: ["transform-async-to-generator"]}))
-       // .pipe(uglify())
-       // .pipe(concat('index.min.js'))
+       // .pipe(babel({
+       //     presets: ['@babel/preset-env'],
+       //     plugins: ['@babel/transform-runtime', "@babel/transform-async-to-generator"]
+       // }))
        .pipe(gulp.dest('dist'));
 });
 

@@ -271,3 +271,15 @@
     color: #000;
   }
 }
+
+.blog-link {
+  color: #fff;
+  text-decoration: underline;
+
+  &:hover {
+    color: #000;
+  }
+  &:visited {
+    color: #fff;
+  }
+}
