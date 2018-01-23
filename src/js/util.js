@@ -6,6 +6,7 @@ $(document).ready(function () {
 
     $('div.next-section a').click(function () {
         scrollToSection($(this));
+        gtag('event', 'Change section', {'event_category': 'Sections', 'event_label': 'Changed to section ' + $(this).get(0).href});
     });
 
     $(window).scroll(function () {
