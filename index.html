@@ -314,9 +314,9 @@
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans">
     </noscript>
 
-    <link rel="stylesheet" href="styles/style.css"/>
+    <link rel="stylesheet" href="styles/style.min.css"/>
 
-    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <!--<!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-42874473-4"></script>
 <script>
     window.dataLayer = window.dataLayer || [];
@@ -325,7 +325,7 @@
 
     gtag('config', 'UA-42874473-4');
 </script>
-
+-->
 </head>
 
 <body data-spy="scroll" data-target=".navbar">
@@ -391,7 +391,7 @@
         return new Promise((resolve) => setTimeout(resolve, ms));
     }
 
-    onLoad().then(() => {});
+    onLoad();
 </script>
 
 <script src="js/vendor.min.js"></script>
@@ -487,11 +487,6 @@
             </div>
         </div>
     </div>
-
-    <div class="next-section">
-        <p class="next-section__link-text">Ausbildung</p>
-        <a href="#education"><i class="fa fa-chevron-down fa-3x"></i></a>
-    </div>
 </div>
 <div id="education" class="section education-section">
     <h2 class="text-center">Ausbildung</h2>
@@ -543,7 +538,7 @@
                 <p>University of Helsinki</p>
                 <p>September 2014 - Mai 2015</p>
             </div>
-            <div class="col-sm-6">
+            <div class="col-sm-6 resume-item__column">
                 <p class="resume-item__header"><strong>Erasmus Austauschstudium</strong></p>
                 <ul class="focus-list">
                    <li>Fachliche und persönliche Weiterentwicklung</li>
@@ -570,11 +565,6 @@
                 </ul>
             </div>
         </div>
-    </div>
-
-    <div class="next-section">
-        <p class="next-section__link-text">Berufserfahrung</p>
-        <a href="#career"><i class="fa fa-chevron-down fa-3x"></i></a>
     </div>
 </div>
 <div id="career" class="section carreer-section">
@@ -711,10 +701,6 @@
         </div>
     </div>
 
-    <div class="next-section">
-        <p class="next-section__link-text">Fähigkeiten</p>
-        <a href="#abilities"><i class="fa fa-chevron-down fa-3x"></i></a>
-    </div>
 </div>
 <div id="abilities" class="section abilities-section">
     <h2 class="text-center">Fähigkeiten</h2>
@@ -873,11 +859,6 @@
             </div>
         </div>
     </div>
-
-    <div class="next-section">
-        <p class="next-section__link-text">Projekte und Erfolge</p>
-        <a href="#projects"><i class="fa fa-chevron-down fa-3x"></i></a>
-    </div>
 </div>
 <div id="projects" class="section projects-section">
     <h2 class="text-center">Projekte und Erfolge</h2>
@@ -1011,10 +992,6 @@
         </ul>
     </div>
 
-    <div class="next-section">
-        <p class="next-section__link-text">Freizeit</p>
-        <a href="#spare-time"><i class="fa fa-chevron-down fa-3x"></i></a>
-    </div>
 </div>
 <div id="spare-time" class="section spare-time-section">
     <h2 class="text-center">Freizeit</h2>
