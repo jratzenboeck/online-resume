@@ -4,8 +4,8 @@ var clean = require('gulp-clean');
 var webserver = require('gulp-webserver');
 var concat = require('gulp-concat');
 var nunjucksRender = require('gulp-nunjucks-render');
-var uglify = require('gulp-uglify');
-var babel = require('gulp-babel');
+var cleanCSS = require('gulp-clean-css');
+var rename = require('gulp-rename');
 
 var vendorCss = [
   'node_modules/bootstrap/dist/css/bootstrap.css',
@@ -61,6 +61,8 @@ gulp.task('fonts', function () {
 gulp.task('sass', function () {
     return gulp.src('src/styles/style.scss')
         .pipe(sass().on('error', sass.logError))
+        .pipe(cleanCSS({compatibility: 'ie8'}))
+        .pipe(rename({basename: 'style.min'}))
         .pipe(gulp.dest('dist/styles'));
 });
 
@@ -87,7 +89,7 @@ gulp.task('webserver', function() {
 });
 
 
-gulp.task('build', gulp.series('clean', gulp.parallel('html', 'js', 'vendorCss', 'vendorJs', 'sass', 'fonts', 'img', 'robots')));
+gulp.task('build', gulp.series( gulp.parallel('html', 'js', 'vendorCss', 'vendorJs', 'sass', 'fonts', 'img', 'robots')));
 gulp.task('run', gulp.series('build', 'webserver'));
 gulp.watch('src/**/*.*', gulp.series('build'));
 
