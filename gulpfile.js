@@ -17,6 +17,10 @@ var vendorJS = [
     'node_modules/bootstrap/dist/js/bootstrap.min.js'
 ];
 
+var fonts = [
+    'node_modules/font-awesome/fonts/fontawesome-webfont.woff2'
+];
+
 gulp.task('html', function (){
     // Gets .html and .nunjucks files in pages
     return gulp.src('src/pages/**/*.html')
@@ -85,7 +89,7 @@ gulp.task('webserver', function() {
 });
 
 
-gulp.task('build', gulp.series('clean', gulp.parallel('html', 'js', 'vendorCss', 'vendorJs', 'sass', 'img', 'robots')));
+gulp.task('build', gulp.series('clean', gulp.parallel('html', 'js', 'vendorCss', 'vendorJs', 'sass', 'fonts', 'img', 'robots')));
 gulp.task('run', gulp.series('build', 'webserver'));
 gulp.watch('src/**/*.*', gulp.series('build'));
 
