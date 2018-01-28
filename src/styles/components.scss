@@ -55,12 +55,17 @@
 // Next section component (link text and arrow down)
 .next-section {
   @include container-fixed-centered-horizontal(300px, 80px);
-  bottom: 20px;
+  bottom: 50px;
   height: auto;
 
   .next-section__link-text {
     line-height: 1.0;
     font-size: 18px;
+  }
+
+  #arrow-intro-section {
+    position: relative;
+    top: 0;
   }
 }
 
