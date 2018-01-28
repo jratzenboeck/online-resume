@@ -52,8 +52,13 @@ function onIntersection(entries, observer) {
 
 function preLoad(image) {
     image.src = image.dataset.src;
+    if (!!image.dataset.srcset) {
+        image.srcset = image.dataset.srcset;
+    }
+
     image.onload = () => {
         image.removeAttribute('data-src');
+        image.removeAttribute('data-srcset');
     };
 }
 
